@@ -4,8 +4,8 @@ import PlayingCard from '@/components/PlayingCard.vue';
 
 <template>
     <div class="game-board">
-        <playing-card card-value="q" suit="heart"/>
-        <playing-card card-value="spade" suit="heart"/>    
-        <playing-card card-value="spade" suit="heart"/>
+        <playing-card card-value="Q" suit="heart"/>
+        <playing-card card-value="6" suit="spade"/>    
+        <playing-card card-value="K" suit="club"/>
     </div>
 </template>
