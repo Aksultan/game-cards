@@ -12,7 +12,7 @@ const suitAlias: {[index: string]: string} = {
 };
 </script>
 <template>
-    <div class="card">
+    <div :class="['card']">
         <div class="card-inner">
             <div class="card-front">
                 <div :class="[`value${suit ? '__' + suit : ''}`, 'value']">
@@ -35,6 +35,7 @@ const suitAlias: {[index: string]: string} = {
     height: 20rem;
     width: 12rem;
     border-radius: 20px;
+    transform-style: preserve-3d;
 }
 
 .card-front {
@@ -42,6 +43,7 @@ const suitAlias: {[index: string]: string} = {
     flex-direction: column;
     border-radius: 20px;
     padding: 10px 20px;
+    transform: rotateY(180deg);
 }
 
 .card-back {
