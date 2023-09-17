@@ -69,7 +69,6 @@ button:active {
         scale: 1;
     }
     50% {
-        transform: rotateY(-45deg);
         scale: 1.3;
     }
     100% {
