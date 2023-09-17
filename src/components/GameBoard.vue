@@ -25,13 +25,13 @@ let isAnimationActive = ref(false);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: var(--gap-m);
     position: relative;
 }
 
 .cards-wrapper {
     display: flex;
-    gap: 20px;   
+    gap: var(--gap-m);   
 }
 
 .empty-space {
@@ -41,16 +41,16 @@ let isAnimationActive = ref(false);
 
 button {
     background-color: unset;
-    border: 1px solid #fff;
-    padding: 8px 16px;
-    color: #fff;
+    border: 1px solid var(--secondary-color);
+    padding: var(--btn-padding);
+    color: var(--secondary-color);
     cursor: pointer;
     font-weight: bolder;
 }
 
 button:active {
-    color: #000;
-    background-color: #fff; 
+    color: var(--main-color);
+    background-color: var(--secondary-color); 
 }
 
 .active {
@@ -76,4 +76,30 @@ button:active {
         scale: 1;
     }
 }
+
+@keyframes moveCardMobile {
+    20% {
+        transform: translateX(-20%);
+    }
+    30% {
+        transform: translateX(0) rotate3d(0,1,0,180deg) ;
+        scale: 1;
+    }
+    50% {
+        scale: 1.3;
+    }
+    100% {
+        transform: translateY(calc(-1*(100% + 10px))) rotate3d(0,1,0,180deg);
+        scale: 1.3;
+    }
+}
+
+@media (max-width:600px) {
+    .active {
+        animation: moveCardMobile 5s;
+        animation-fill-mode: forwards;
+    }
+}
+
+
 </style>

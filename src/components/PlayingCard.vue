@@ -29,34 +29,42 @@ const suitAlias: {[index: string]: string} = {
 </template>
 
 <style>
+
+.card {
+    width: 12em;
+    height: 20em;
+}
+
+.card-inner, .card-front, .card-back {
+    border-radius: var(--border-radius-m);
+}
+
 .card-inner {
     position: relative;
-    background-color: #fff;
-    height: 20rem;
-    width: 12rem;
-    border-radius: 20px;
+    background-color: var(--secondary-color);
     transform-style: preserve-3d;
 }
 
 .card-front {
     display: flex;
     flex-direction: column;
-    border-radius: 20px;
-    padding: 10px 20px;
+    padding: var(--padding);
     transform: rotateY(180deg);
 }
 
 .card-back {
-    background-color: #fff;
-    border-radius: 20px;
-    border: 2px solid #000;
+    background: var(--gradient); 
+    border: 2px solid var(--main-color);
+}
+
+.card-inner, .card-front, .card-back {
+    width: 100%;
+    height: 100%;
 }
 
 .card-front, .card-back {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 
@@ -72,10 +80,46 @@ const suitAlias: {[index: string]: string} = {
 }
 
 .value__spade, .value__club {
-    color: #9b94ba;
+    color: var(--card-suit-black);
 }
 
 .value__heart, .value__diamond {
-    color: #fa7b7a;
+    color: var(--card-suit-red);
 }
+
+@media (max-width:600px) {
+    .card {
+        width: 10em;
+        height: 15em;
+    }
+
+    .card-front, .card-back, .card-inner {
+        border-radius: var(--border-radius-s);
+    }
+}
+
+@media (max-width: 500px) {
+    .card {
+        width: 8em;
+        height: 12em;
+    }
+}
+
+@media (max-width: 400px) {
+    .card {
+        width: 6em;
+        height: 9em;
+    }
+
+    .value {
+        font-size: 2rem;
+        padding: 0;
+    }
+
+    .suit {
+        font-size: 1rem;
+    }
+}
+
+
 </style>
